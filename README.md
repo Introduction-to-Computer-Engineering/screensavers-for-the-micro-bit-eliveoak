@@ -109,11 +109,25 @@ This assignment asks you to design a program and implement it in micro:bit JavaS
 
 ### SS 1
 
-_[Your description of screensaver 1]_
+lines go down the screen, become blocks, and go back up 
 
 ### SS 2 
 
-_[And so on]_
+LEDS come from the corner and go throughout the screen
+
+### SS 3
+
+Random LED generation
+
+### SS 4
+
+Line spins with LED
+
+### SS 5
+
+Lines of X then lines of +
+
 
 ## Demo URL
 
+[Screensavers demo] (https://imgur.com/a/J74b8dq)
