@@ -130,4 +130,4 @@ Lines of X then lines of +
 
 ## Demo URL
 
-[Screensavers demo] (https://imgur.com/a/J74b8dq)
+[Screensavers demo](https://imgur.com/a/J74b8dq)
