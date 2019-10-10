@@ -1,0 +1,114 @@
+input.onGesture(Gesture.Shake, function () {
+    Screensaver = 4
+    if (Devicesleep == true) {
+        if (Screensaver == 4) {
+            led.stopAnimation()
+            basic.clearScreen()
+            while (Screensaver == 4) {
+                basic.showAnimation(`
+. . # . . . . . # . . . . . # . . . . . . . . . . . . . . . # . . . . . # . . . . . . # . . . . . # . . . . . . . . . . . . . . . # . . . . . # . . . 
+. . # . . . . . # . . . . # . . . . # # . . . . . # # . . . . # . . . . # . . . . . . # . . . . # . . . . # # . . . . . # # . . . . # . . . . # . . .
+. . # . . . . # . . . . # . . . . # . . # # # # # . . # . . . . # . . . . # . . . . # . . . . # . . . . # . . # # # # # . . # . . . . # . . . . # . . 
+. . # . . . # . . . . # . . . # # . . . . . . . . . . . # # . . . # . . . . # . . # . . . . # . . . # # . . . . . . . . . . . # # . . . # . . . . # .
+. . # . . . # . . . # . . . . . . . . . . . . . . . . . . . . . . . # . . . # . . # . . . # . . . . . . . . . . . . . . . . . . . . . . . # . . . # .
+`, 100)
+            }
+            y = 0
+        }
+    }
+})
+input.onGesture(Gesture.TiltLeft, function () {
+    Screensaver = 2
+    if (Devicesleep == true) {
+        if (Screensaver == 2) {
+            led.stopAnimation()
+            basic.clearScreen()
+            while (Screensaver == 2) {
+                for (let i = 0; i < 5; i++) {
+                    basic.showAnimation(`
+# . . . . # # . . . # # # . . # # # # . # # # # # . # # # # . . # # # . . . # # . . . . # . . . . .
+. . . . . # # . . . # # # . . # # # # . # # # # # # # # # # . . # # # . . . # # . . . . # . . . . .
+. . . . . . . . . . # # # . . # # # # . # # # # # # # # # # # # # # # . . . # # . . . . # . . . . .
+. . . . . . . . . . . . . . . # # # # . # # # # # # # # # # # # # # # # # # # # . . . . # . . . . .
+. . . . . . . . . . . . . . . . . . . . # # # # # # # # # # # # # # # # # # # # # # # # # . . . . .
+`, 100)
+                }
+            }
+        }
+    }
+})
+input.onGesture(Gesture.LogoDown, function () {
+    Screensaver = 5
+    if (Devicesleep == true) {
+        if (Screensaver == 5) {
+            led.stopAnimation()
+            basic.clearScreen()
+            while (Screensaver == 5) {
+                basic.showAnimation(`
+# . . . . . . . . # # . . . # . . # . . . . . . . . . # . . 
+. # . . . . . . # . . # . # . . . # . . . . . . . . . # . . 
+. . # . . . . # . . . . # . . . . # . . # # # # # # # # # #  
+. . . # . . # . . . . # . # . . . # . . . . . . . . . # . . 
+. . . . # # . . . . # . . . # . . # . . . . . . . . . # . . 
+`, 200)
+            }
+        }
+    }
+})
+input.onGesture(Gesture.TiltRight, function () {
+    Screensaver = 3
+    if (Devicesleep == true) {
+        if (Screensaver == 3) {
+            led.stopAnimation()
+            basic.clearScreen()
+            for (let i = 0; i < 30; i++) {
+                while (Screensaver == 3) {
+                    for (let index = 0; index <= 4; index++) {
+                        led.plot(index, Math.randomRange(0, 4))
+                        led.plot(Math.randomRange(0, 4), index)
+                        led.plot(Math.randomRange(0, 4), Math.randomRange(0, 4))
+                        led.plot(Math.randomRange(0, 4), Math.randomRange(0, 4))
+                        basic.pause(125)
+                        basic.clearScreen()
+                    }
+                }
+            }
+        }
+    }
+})
+input.onButtonPressed(Button.B, function () {
+    led.stopAnimation()
+    Devicesleep = false
+})
+input.onButtonPressed(Button.A, function () {
+    Devicesleep = true
+    Screensaver = 1
+    led.stopAnimation()
+    if (Devicesleep == true) {
+        if (Screensaver == 1) {
+            basic.clearScreen()
+            while (Screensaver == 1) {
+                basic.showAnimation(`
+# # # # # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # . . . . . . . . . . . . . . . . . . . . # # # # #
+. . . . . # # # # # . . . . . . . . . . . . . . . . . . . . . . . . . # # # # # # # # # # # # # # # # # # # # # # # # # . . . . . # # # # # # # # # # # # # # # # # # # # . . . . . . . . . . . . . . . # # # # # . . . . .
+. . . . . . . . . . # # # # # . . . . . . . . . . . . . . . # # # # # # # # # # # # # # # # # # # # # # # # # . . . . . . . . . . . . . . . # # # # # # # # # # # # # # # . . . . . . . . . . # # # # # . . . . . . . . . .
+. . . . . . . . . . . . . . . # # # # # . . . . . # # # # # # # # # # # # # # # # # # # # # # # # # . . . . . . . . . . . . . . . . . . . . . . . . . # # # # # # # # # # . . . . . # # # # # . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . # # # # # # # # # # # # # # # # # # # # # # # # # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # # # # # # # # # # . . . . . . . . . . . . . . . . . . . .
+`, 300)
+            }
+        }
+    }
+})
+let y = 0
+let Devicesleep = false
+let Screensaver = 0
+Screensaver = 0
+Devicesleep = false
+basic.forever(function () {
+    if (Devicesleep == false) {
+        basic.showString("Awake")
+    }
+})
+
+//I accidentally pressed on blocks and it re-ordered all of my beautiful organization :(
+
